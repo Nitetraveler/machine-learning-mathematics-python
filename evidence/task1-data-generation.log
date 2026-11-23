@@ -1,0 +1,2 @@
+housing: (1000, 5), missing age_years: 12
+churn:   (2000, 4), churn rate: 0.494

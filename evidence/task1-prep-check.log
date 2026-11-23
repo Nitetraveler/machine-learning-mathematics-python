@@ -1,0 +1,6 @@
+[1.0, 3.0, 3.0, 10.0] {'a': 3.0} original NaNs: 1
+[[-1.0, 0.0], [1.0, 0.0]]
+PASS: Median imputation
+PASS: Original DataFrame unchanged
+PASS: Constant feature handling
+PASS: Standardizer matches scikit-learn

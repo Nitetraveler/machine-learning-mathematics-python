@@ -1,0 +1,28 @@
+========== VERIFY DATASET INTEGRITY ==========
+PASS: Dataset dimensions
+PASS: Exactly 12 missing ages imputed
+PASS: Churn dataset and binary target
+Churn rate: 0.4945
+PASS: Full column rank
+PASS: Raw condition number above 100
+PASS: Standardized condition number below 1.5
+PASS: Positive definiteness
+PASS: Standardizer matches sklearn
+PASS: Zero mean and unit variance
+PASS: Symmetric positive-definite Gram matrix
+Conditioning improvement: 568.04x
+Task 1 OK  cond_raw=593.6 cond_std=1.045
+
+========== VERIFY PYTHON SYNTAX ==========
+PASS: Python syntax
+
+========== VERIFY REQUIRED FILES ==========
+PASS: data/housing.csv
+PASS: data/housing_clean.csv
+PASS: data/churn.csv
+PASS: mlmath/prep.py
+PASS: scripts/make_data.py
+PASS: scripts/task1_explore.py
+PASS: outputs/task1.json
+
+PASS: TASK 1 COMPLETE

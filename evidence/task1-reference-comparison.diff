@@ -1,0 +1,33 @@
+--- exercises/task1_prep_attempt.py	2026-11-23 18:10:20.724756370 +0000
++++ mlmath/prep.py	2026-11-23 18:10:42.084641116 +0000
+@@ -1 +1 @@
+-"""Student implementation attempt for Task 1."""
++"""Data preparation helpers."""
+@@ -7,3 +7,7 @@
+-    # TODO: copy the DataFrame, calculate medians,
+-    # replace missing values and return both results.
+-    raise NotImplementedError
++    out = df.copy()
++    medians = {}
++    for col in columns:
++        med = float(out[col].median())
++        out[col] = out[col].fillna(med)
++        medians[col] = med
++    return out, medians
+@@ -12,0 +17,2 @@
++    """z = (x - mean) / std, column-wise, population std (ddof=0)."""
++
+@@ -14,3 +20,6 @@
+-        # TODO: calculate column means and population std.
+-        # Replace zero standard deviations with 1.0.
+-        raise NotImplementedError
++        X = np.asarray(X, dtype=float)
++        self.mean_ = X.mean(axis=0)
++        std = X.std(axis=0)
++        std[std == 0] = 1.0
++        self.std_ = std
++        return self
+@@ -19 +28,2 @@
+-        return (np.asarray(X, float) - self.mean_) / self.std_
++        X = np.asarray(X, dtype=float)
++        return (X - self.mean_) / self.std_
