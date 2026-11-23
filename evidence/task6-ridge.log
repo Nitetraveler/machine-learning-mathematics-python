@@ -1,0 +1,25 @@
+irreducible error (noise variance) = 0.09
+
+degree  train_mse     cv_mse   test_mse
+     1     0.3343     0.3831     0.2874
+     3     0.0800     0.1115     0.1050
+     5     0.0737     0.1098     0.1263
+     9     0.0692     3.5105     0.1468
+    15     0.0532    24.6320     0.1579
+best degree by 5-fold CV (lambda~0): 5
+
+--- ridge path, degree 15 ---
+    lambda     cv_mse      ||w||
+   1.0e-06     1.1397   232.8408
+   1.0e-05     5.8338    66.0866
+   1.0e-04     6.4971    22.5104
+   1.0e-03     3.4128     5.1862
+   1.0e-02     0.6348     3.3791
+   1.0e-01     0.1011     2.8859
+   1.0e+00     0.1870     1.8942
+   1.0e+01     0.4741     0.6571
+best lambda = 1.0e-01  test MSE (degree 15 + ridge) = 0.1562
+||w|| non-increasing in lambda: True
+
+max |ours - sklearn Ridge(alpha=0.5)| (degree 5) = 1.44e-15
+saved outputs/bias_variance.png

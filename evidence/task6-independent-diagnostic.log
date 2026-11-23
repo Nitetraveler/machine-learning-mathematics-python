@@ -1,0 +1,33 @@
+========== PRESERVE ORIGINAL RESULTS ==========
+PASS: Original results preserved
+
+========== VERIFY PINNED VERSIONS ==========
+NumPy: 1.26.4
+SciPy: 1.13.1
+scikit-learn: 1.5.1
+PASS: Pinned versions
+
+========== INDEPENDENT SKLEARN REPRODUCTION ==========
+      lambda      ours CV   sklearn CV
+     1.0e-06     1.139717     1.139717
+     1.0e-05     5.833830     5.833830
+     1.0e-04     6.497120     6.497120
+     1.0e-03     3.412765     3.412765
+     1.0e-02     0.634752     0.634752
+     1.0e-01     0.101123     0.101123
+     1.0e+00     0.187024     0.187024
+     1.0e+01     0.474057     0.474057
+
+PASS: Cross-validation independently reproduced
+Best lambda ours: 0.09999999999999999
+Best lambda sklearn: 0.09999999999999999
+
+========== FINAL DIAGNOSTIC RESULTS ==========
+Original test MSE: 0.1561991018883563
+Independent scratch MSE: 0.1561991018883563
+Independent sklearn MSE: 0.1561991018883562
+Maximum prediction difference: 2.6645352591003757e-15
+Required MSE: below 0.15
+Threshold satisfied: False
+PASS: Independent numerical reproduction
+FINDING: Reference experiment exceeds grading threshold

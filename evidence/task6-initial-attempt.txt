@@ -1,0 +1,17 @@
+"""Task 6 student implementation exercise."""
+import numpy as np
+
+
+def ridge_fit(Xb, y, lam):
+    # TODO: create an identity matrix of size Xb.shape[1].
+    # Multiply by lam and set its first diagonal entry to zero.
+    # Solve the regularized normal equation using np.linalg.solve.
+    raise NotImplementedError
+
+
+def kfold_indices(n, k=5, seed=0):
+    # TODO: generate a seeded permutation of n indices.
+    # Split indices into k folds using np.array_split.
+    # For each fold, concatenate the remaining folds for training.
+    # Yield training and validation indices.
+    raise NotImplementedError

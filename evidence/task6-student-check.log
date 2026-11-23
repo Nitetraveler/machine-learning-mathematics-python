@@ -1,0 +1,6 @@
+PASS: Fold partitioning
+PASS: Ridge lambda=0 matches OLS
+PASS: Ridge coefficient shrinkage
+PASS: Intercept excluded from penalty
+PASS: Student ridge quick check
+NOTE: Guided correction; initial evidence preserved

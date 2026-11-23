@@ -1,0 +1,50 @@
+--- exercises/task6_ridge_attempt.py	2026-11-23 18:34:28.548833543 +0000
++++ mlmath/model_selection.py	2026-11-23 18:34:37.835854298 +0000
+@@ -1 +1 @@
+-"""Task 6 guided exercise correction."""
++"""Polynomial features, ridge regression and k-fold cross-validation."""
+@@ -2,0 +3 @@
++from mlmath.linreg import add_bias, mse
+@@ -5,6 +6,3 @@
+-def ridge_fit(Xb, y, lam):
+-    Xb = np.asarray(Xb, dtype=float)
+-    y = np.asarray(y, dtype=float)
+-
+-    penalty = np.eye(Xb.shape[1])
+-    penalty[0, 0] = 0.0
++def polynomial_features(x, degree):
++    x = np.asarray(x, dtype=float).ravel()
++    return np.column_stack([x ** k for k in range(1, degree + 1)])
+@@ -12,2 +9,0 @@
+-    A = Xb.T @ Xb + lam * penalty
+-    b = Xb.T @ y
+@@ -15 +11,6 @@
+-    return np.linalg.solve(A, b)
++def ridge_fit(Xb, y, lam):
++    Xb = np.asarray(Xb, float)
++    y = np.asarray(y, float)
++    P = lam * np.eye(Xb.shape[1])
++    P[0, 0] = 0.0
++    return np.linalg.solve(Xb.T @ Xb + P, Xb.T @ y)
+@@ -19,3 +20,2 @@
+-    indices = np.random.default_rng(seed).permutation(n)
+-    folds = np.array_split(indices, k)
+-
++    idx = np.random.default_rng(seed).permutation(n)
++    folds = np.array_split(idx, k)
+@@ -23,5 +23,10 @@
+-        validation = folds[i]
+-        training = np.concatenate(
+-            [fold for j, fold in enumerate(folds) if j != i]
+-        )
+-        yield training, validation
++        train = np.concatenate([folds[j] for j in range(k) if j != i])
++        yield train, folds[i]
++
++
++def cross_val_mse(X, y, lam, k=5, seed=0):
++    scores = []
++    for tr, va in kfold_indices(len(y), k, seed):
++        w = ridge_fit(add_bias(X[tr]), y[tr], lam)
++        scores.append(mse(y[va], add_bias(X[va]) @ w))
++    return float(np.mean(scores))

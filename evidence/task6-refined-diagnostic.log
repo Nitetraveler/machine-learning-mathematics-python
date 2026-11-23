@@ -1,0 +1,16 @@
+========== TRAINING-ONLY MODEL SELECTION ==========
+Lambda candidates: 141
+Selected lambda: 0.09999999999999999
+Best CV MSE: 0.10112285595338606
+
+========== REFINED MODEL RESULTS ==========
+Original test MSE: 0.1561991018883563
+Refined test MSE: 0.1561991018883563
+sklearn test MSE: 0.1561991018883562
+Maximum prediction difference: 2.6645352591003757e-15
+Threshold satisfied: False
+PASS: Refined training-only CV experiment
+
+========== VERIFY ORIGINAL RESULTS UNCHANGED ==========
+PASS: Original reference implementation preserved
+PASS: Supplementary report generated

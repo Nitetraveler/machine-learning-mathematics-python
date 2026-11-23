@@ -1,0 +1,9 @@
+PASS: Ridge matches sklearn
+Maximum difference: 1.4432899320127035e-15
+PASS: Coefficient norm decreases
+PASS: Sensible polynomial degree selected
+PASS: Overfitting demonstrated
+PASS: Training error decreases
+Traceback (most recent call last):
+  File "<stdin>", line 33, in <module>
+AssertionError

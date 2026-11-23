@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "/home/ubuntu/mllab/exercises/task6_ridge_attempt.py", line 17, in kfold_indices
+    raise NotImplementedError
+NotImplementedError

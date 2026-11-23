@@ -1,0 +1,12 @@
+{
+  "author": "Tariq Hussain",
+  "selection_method": "training-only 5-fold CV",
+  "lambda_candidates": 141,
+  "best_lambda": 0.09999999999999999,
+  "best_cv_mse": 0.10112285595338606,
+  "test_mse": 0.1561991018883563,
+  "sklearn_test_mse": 0.1561991018883562,
+  "max_prediction_difference": 2.6645352591003757e-15,
+  "original_test_mse": 0.1561991018883563,
+  "threshold_satisfied": false
+}
