@@ -1,0 +1,20 @@
+confusion matrix [[TN, FP], [FN, TP]]:
+[[155  31]
+ [ 67 147]]
+
+metric         ours  sklearn
+accuracy     0.7550   0.7550
+precision    0.8258   0.8258
+recall       0.6869   0.6869
+f1           0.7500   0.7500
+
+AUC trapezoid = 0.857929  rank (Mann-Whitney) = 0.857929  sklearn = 0.857929
+
+highest threshold with recall >= 0.80: 0.4118
+  recall = 0.8037  precision = 0.7963  customers flagged = 216 of 400
+
+--- accuracy paradox: subset with 4.6% churners ---
+'never churn' model: accuracy = 0.9538  recall = 0.0000
+our model @0.5     : accuracy = 0.8359  recall = 0.8889  precision = 0.2051
+AUC on subset      : 0.9211  (ranking quality is prevalence-independent)
+saved outputs/roc_churn.png

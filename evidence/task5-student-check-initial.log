@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<stdin>", line 10, in <module>
+  File "/home/ubuntu/mllab/exercises/task5_metrics_attempt.py", line 9, in confusion_matrix
+    raise NotImplementedError
+NotImplementedError

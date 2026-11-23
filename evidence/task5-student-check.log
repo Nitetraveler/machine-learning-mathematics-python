@@ -1,0 +1,4 @@
+Confusion matrix: [[1, 1], [1, 2]]
+AUC: 0.8333333333333334
+PASS: Student metrics quick check
+NOTE: Guided correction; initial evidence preserved

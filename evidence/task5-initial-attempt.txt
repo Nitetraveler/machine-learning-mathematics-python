@@ -1,0 +1,16 @@
+"""Task 5 student implementation exercise."""
+import numpy as np
+from scipy.stats import rankdata
+
+
+def confusion_matrix(y_true, y_pred):
+    # TODO: calculate TN, FP, FN, TP using boolean masks.
+    # Return a 2x2 integer NumPy array.
+    raise NotImplementedError
+
+
+def roc_auc_rank(y_true, scores):
+    # TODO: calculate average ranks using rankdata.
+    # Count positive and negative labels.
+    # Apply the Mann-Whitney formula.
+    raise NotImplementedError
