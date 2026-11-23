@@ -1,0 +1,6 @@
+raw lambda_max = 41041 -> lr must be < 4.87e-05
+scaled lambda_max = 2.071239 -> lr must be < 0.965605
+Raw lr=0.01 exceeds stability bound by 205.21x
+Stable learning-rate bound improvement: 19814.79x
+PASS: Raw-feature divergence mathematically explained
+PASS: Standardization restores stable optimization

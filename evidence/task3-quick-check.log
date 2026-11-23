@@ -1,0 +1,4 @@
+Analytic gradient: [-6.         -8.66666667]
+[1. 2.] epochs: 155 loss decreased: True
+PASS: Analytic gradient matches finite differences
+PASS: Reference gradient descent

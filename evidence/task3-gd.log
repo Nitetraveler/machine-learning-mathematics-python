@@ -1,0 +1,23 @@
+Matplotlib is building the font cache; this may take a moment.
+/home/ubuntu/mllab/mlmath/gd.py:7: RuntimeWarning: overflow encountered in matmul
+  return float(r @ r / len(y))
+gradient check relative error: 1.03e-09
+
+--- raw (unscaled) features, lr=0.01 ---
+stopped after 59 epochs, last loss = inf, diverged = True
+
+Hessian eigenvalues (scaled data): [1.876 1.988 2.    2.038 2.098]
+stability bound: lr < 2/lambda_max = 0.9532
+optimal training MSE: 223.2938
+
+      lr  epochs     final_loss  status
+  0.0005    5000       227.4577  not yet converged
+  0.0100     898       223.2938  converged
+  0.1000      89       223.2938  converged
+  0.5000       9       223.2938  converged
+  0.8579      80       223.2938  converged
+  1.0485    1907            inf  DIVERGED
+
+GD (lr=0.5) weights in original units: [49.2884  2.0026 10.2369 -0.7977 -3.0107]
+max |w_gd - w_ols| = 4.35e-09
+saved outputs/gd_lr_sweep.png
