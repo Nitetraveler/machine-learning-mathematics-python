@@ -1,0 +1,23 @@
+--- numerical stability ---
+naive sigmoid : [0.  0.5 1. ]  warnings raised: 1
+stable sigmoid: [0.  0.5 1. ]  warnings raised: 0
+log loss, positive example predicted p=0 (clipped): 34.5388
+
+gradient check relative error: 7.14e-12
+
+--- unregularised fit ---
+ours    (scaled): [-0.092  -1.1621  0.8562  0.6643]  iterations: 123
+sklearn (scaled): [-0.092  -1.1621  0.8562  0.6643]
+max abs difference: 6.93e-06
+
+--- L2-regularised fit: l2 = 0.05  <=>  C = 1/(n*l2) ---
+C = 0.01250; max abs difference: 2.62e-06
+||w|| without / with L2: 1.5890 / 1.0973
+
+coefficients in original units (true: -1.0, -0.06, 0.03, 0.5):
+  intercept        -1.1947
+  tenure_months    -0.0563
+  monthly_charge    0.0299
+  support_calls     0.4725
+
+test accuracy = 0.7550   test log loss = 0.4864

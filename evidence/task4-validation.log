@@ -1,0 +1,43 @@
+========== OFFICIAL TASK 4 VALIDATION ==========
+PASS: Unregularised model matches scikit-learn
+Maximum difference: 6.928081812906939e-06
+PASS: L2 model matches scikit-learn
+Maximum difference: 2.617954902861541e-06
+PASS: Test accuracy within required range
+PASS: Exactly 400 held-out customer scores
+Task 4 OK  acc=0.755 logloss=0.486
+
+========== ADDITIONAL MATHEMATICAL VALIDATION ==========
+Exception ignored in: <_io.FileIO name='outputs/task4_logreg.json' mode='rb' closefd=True>
+Traceback (most recent call last):
+  File "<stdin>", line 91, in <module>
+ResourceWarning: unclosed file <_io.TextIOWrapper name='outputs/task4_logreg.json' mode='r' encoding='UTF-8'>
+PASS: Stable sigmoid for extreme scalars and arrays
+PASS: Clipping prevents log(0)
+PASS: Independent 1600/400 train-test split
+PASS: Training-only standardization
+PASS: Gradient check l2=0.00 error=7.14e-12
+PASS: Gradient check l2=0.05 error=9.62e-12
+PASS: Gradient check l2=0.10 error=4.96e-12
+PASS: L2 penalty excludes bias
+PASS: L2 regularization shrinks coefficient norm
+PASS: Training loss decreases
+PASS: Correct scikit-learn C mapping
+PASS: CSV schema, labels and probability integrity
+PASS: JSON results match actual predictions
+
+========== VERIFY PYTHON SYNTAX ==========
+PASS: Python syntax
+
+========== VERIFY REQUIRED DELIVERABLES ==========
+PASS: mlmath/logreg.py
+PASS: scripts/task4_logreg.py
+PASS: exercises/task4_logreg_attempt.py
+PASS: outputs/task4_logreg.json
+PASS: outputs/churn_test_scores.csv
+PASS: evidence/task4-logreg.log
+PASS: evidence/task4-quick-check.log
+PASS: evidence/task4-student-check.log
+PASS: evidence/task4-reference-comparison.diff
+
+PASS: TASK 4 COMPLETE

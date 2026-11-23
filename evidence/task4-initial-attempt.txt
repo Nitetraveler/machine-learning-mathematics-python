@@ -1,0 +1,18 @@
+"""Task 4 student implementation exercise."""
+import numpy as np
+
+
+def sigmoid(z):
+    # TODO: convert z to a NumPy float array.
+    # Compute e = exp(-abs(z)).
+    # Use np.where to select the stable formula.
+    raise NotImplementedError
+
+
+def loss_and_grad(Xb, y, w, l2=0.0):
+    # TODO: calculate probabilities using sigmoid.
+    # Clip probabilities before calculating log loss.
+    # Add the L2 penalty, excluding the bias.
+    # Calculate the analytical gradient.
+    # Return loss and gradient.
+    raise NotImplementedError
