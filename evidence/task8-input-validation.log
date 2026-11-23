@@ -1,0 +1,10 @@
+========== TEST MISSING FEATURES ==========
+ERROR: input is missing required columns: ['support_calls']
+Actual exit code: 2
+PASS: Missing features rejected
+
+========== TEST NONNUMERIC FEATURES ==========
+ERROR: non-numeric or empty feature values in rows [0]
+Actual exit code: 3
+PASS: Nonnumeric features rejected
+PASS: TASK 8 INPUT VALIDATION

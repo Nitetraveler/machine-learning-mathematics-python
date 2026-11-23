@@ -1,0 +1,36 @@
+========== VERIFY PREVIOUS IMPLEMENTATIONS ==========
+PASS: Prerequisites verified
+
+========== PRESERVE INITIAL EXECUTION LOGS ==========
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+
+========== CREATE TRAINING SCRIPT ==========
+
+========== EXECUTE MODEL TRAINING ==========
+C        Mean CV AUC     Std
+   0.001       0.8294   0.0249
+    0.01       0.8295   0.0255
+     0.1       0.8295   0.0260
+       1       0.8295   0.0262
+      10       0.8295   0.0262
+     100       0.8295   0.0262
+{
+  "best_C": 0.01,
+  "cv_auc": 0.8295170792664761,
+  "test_auc": 0.845934593459346,
+  "auc_ours": 0.845934593459346,
+  "max_prob_diff": 8.107496538845016e-07
+}
+Saved models/churn_model.joblib
+
+========== VERIFY TRAINING RESULTS ==========
+PASS: Held-out AUC threshold
+PASS: Scratch probability equivalence
+PASS: Persisted model metadata
+-rw-rw-r-- 1 ubuntu ubuntu 1.9K Nov 23 18:48 models/churn_model.joblib
+-rw-rw-r-- 1 ubuntu ubuntu  160 Nov 23 18:48 outputs/churn_metrics.json
+PASS: TASK 8 MODEL TRAINING

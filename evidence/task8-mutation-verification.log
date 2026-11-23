@@ -1,0 +1,47 @@
+========== ORIGINAL GRADIENT ==========
+fd288c0db0750c8afabf453d6df7ee03e29ad920ecc1711b0c9d7a19dbd9f1d9  mlmath/gd.py
+
+========== INJECT DELIBERATE ERROR ==========
+PASS: Deliberate gradient mutation applied
+
+========== RUN MUTATED TESTS ==========
+....F.........                                                           [100%]
+=================================== FAILURES ===================================
+_____________________ test_mse_gradient_matches_numerical ______________________
+
+reg_data = (array([[ 1.25730221e-01, -1.32104863e-01,  6.40422650e-01],
+       [ 1.04900117e-01, -5.35669373e-01,  3.61595055e-01...84998,  1.40006966, -1.81159481,  0.87844841,
+        0.86833612, -2.01953445, -0.3761546 ,  2.17542085,  0.06351617]))
+
+    def test_mse_gradient_matches_numerical(reg_data):
+        X, y = reg_data
+        Xb = add_bias(X)
+        w = np.array([0.1, -0.2, 0.3, 0.4])
+
+        g = mse_gradient(Xb, y, w)
+        gn = numerical_gradient(lambda v: mse_loss(Xb, y, v), w)
+
+>       assert np.linalg.norm(g - gn) / np.linalg.norm(g + gn) < 1e-6
+E       AssertionError: assert (2.8042826352250936 / 8.412847905725108) < 1e-06
+E        +  where 2.8042826352250936 = <function norm at 0x70736e54b330>((array([-1.20065694, -2.18072327,  1.28557856,  0.11898658]) - array([-2.40131388, -4.36144654,  2.57115712,  0.23797316])))
+E        +    where <function norm at 0x70736e54b330> = <module 'numpy.linalg' from '/home/ubuntu/mllab/.venv/lib/python3.12/site-packages/numpy/linalg/__init__.py'>.norm
+E        +      where <module 'numpy.linalg' from '/home/ubuntu/mllab/.venv/lib/python3.12/site-packages/numpy/linalg/__init__.py'> = np.linalg
+E        +  and   8.412847905725108 = <function norm at 0x70736e54b330>((array([-1.20065694, -2.18072327,  1.28557856,  0.11898658]) + array([-2.40131388, -4.36144654,  2.57115712,  0.23797316])))
+E        +    where <function norm at 0x70736e54b330> = <module 'numpy.linalg' from '/home/ubuntu/mllab/.venv/lib/python3.12/site-packages/numpy/linalg/__init__.py'>.norm
+E        +      where <module 'numpy.linalg' from '/home/ubuntu/mllab/.venv/lib/python3.12/site-packages/numpy/linalg/__init__.py'> = np.linalg
+
+tests/test_mlmath.py:120: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_mlmath.py::test_mse_gradient_matches_numerical - AssertionE...
+1 failed, 13 passed in 1.18s
+Mutation exit code: 1
+PASS: Mathematical error detected
+
+========== RESTORE ORIGINAL GRADIENT ==========
+fd288c0db0750c8afabf453d6df7ee03e29ad920ecc1711b0c9d7a19dbd9f1d9  mlmath/gd.py
+PASS: Original gradient restored
+
+========== RETEST RESTORED IMPLEMENTATION ==========
+..............                                                           [100%]
+14 passed in 1.10s
+PASS: TASK 8 MUTATION AND RESTORATION
