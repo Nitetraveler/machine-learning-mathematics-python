@@ -1,0 +1,17 @@
+term             true  normal_eq      lstsq    sklearn
+intercept       50.00    49.2884    49.2884    49.2884
+size_m2          2.00     2.0026     2.0026     2.0026
+rooms           10.00    10.2369    10.2369    10.2369
+age_years       -0.80    -0.7977    -0.7977    -0.7977
+distance_km     -3.00    -3.0107    -3.0107    -3.0107
+max |w_normal_eq - w_sklearn| = 5.51e-12
+mean training residual        = 2.00e-13
+||Xb^T r|| / ||Xb^T y||       = 5.03e-16
+test MSE = 231.16  RMSE = 15.20  R^2 = 0.9803
+
+--- collinearity experiment: add size_m2 * 2 as an extra column ---
+rank = 5 of 6 columns, cond(Xb^T Xb) = 3.98e+19
+np.linalg.solve failed: Singular matrix
+lstsq min-norm: size coef = 0.4005, duplicate coef = 0.8011
+size + 2*duplicate = 2.0026  (OLS size coef = 2.0026)
+max prediction difference vs original model = 3.44e-12
