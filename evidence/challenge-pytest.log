@@ -1,0 +1,29 @@
+========== ADD NEWTON UNIT TEST ==========
+
+========== RUN NEWTON UNIT TEST ==========
+.                                                                        [100%]
+1 passed in 1.11s
+
+========== COLLECT ALL TESTS ==========
+tests/test_mlmath.py::test_impute_median_returns_copy
+tests/test_mlmath.py::test_standardizer_matches_sklearn
+tests/test_mlmath.py::test_normal_equation_matches_sklearn
+tests/test_mlmath.py::test_r2_matches_sklearn
+tests/test_mlmath.py::test_mse_gradient_matches_numerical
+tests/test_mlmath.py::test_gradient_descent_reaches_ols
+tests/test_mlmath.py::test_sigmoid_is_stable
+tests/test_mlmath.py::test_logistic_gradient_and_sklearn
+tests/test_mlmath.py::test_classification_metrics_match_sklearn
+tests/test_mlmath.py::test_auc_matches_sklearn_with_ties
+tests/test_mlmath.py::test_kfold_partitions_indices
+tests/test_mlmath.py::test_ridge_matches_sklearn
+tests/test_mlmath.py::test_pca_matches_sklearn
+tests/test_mlmath.py::test_pca_reconstruction_identity
+tests/test_mlmath.py::test_newton_matches_sklearn
+
+15 tests collected in 1.02s
+
+========== RUN ALL 15 TESTS ==========
+...............                                                          [100%]
+15 passed in 1.15s
+PASS: CHALLENGE UNIT TEST SUITE

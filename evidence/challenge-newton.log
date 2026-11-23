@@ -1,0 +1,74 @@
+Training samples: 1600
+Test samples: 400
+
+========== NEWTON ITERATIONS ==========
+Iteration  1: ||grad||=2.799685138776e-01 ||step||=1.115578752946e+00
+Iteration  2: ||grad||=5.271976788746e-02 ||step||=3.886606037655e-01
+Iteration  3: ||grad||=8.166296871302e-03 ||step||=8.528287436089e-02
+Iteration  4: ||grad||=3.064320483939e-04 ||step||=3.456162981071e-03
+Iteration  5: ||grad||=4.763972745162e-07 ||step||=5.390049784776e-06
+Iteration  6: ||grad||=1.156159292491e-12 ||step||=1.308112803505e-11
+Iteration  7: ||grad||=3.161738530280e-17 ||step||=2.039799694167e-16
+
+========== GRADIENT DESCENT COMPARISON ==========
+GD iterations: 20000
+Newton iterations: 7
+Maximum Newton/GD coefficient difference: 8.881784197001252e-16
+
+========== SKLEARN COMPARISON ==========
+Maximum sklearn coefficient difference: 1.735775509437154e-09
+Final Newton gradient norm: 1.161540838980515e-17
+
+========== QUADRATIC CONVERGENCE ==========
+2.799685e-01 -> 5.271977e-02; ratio=6.725973e-01
+5.271977e-02 -> 8.166297e-03; ratio=2.938179e+00
+8.166297e-03 -> 3.064320e-04; ratio=4.594982e+00
+3.064320e-04 -> 4.763973e-07; ratio=5.073421e+00
+4.763973e-07 -> 1.156159e-12; ratio=5.094237e+00
+
+PASS: Newton converged in fewer than 10 iterations
+PASS: Newton matches gradient descent
+PASS: Newton matches sklearn
+PASS: Final gradient norm below 1e-12
+PASS: Numerical evidence of quadratic convergence
+PASS: CHALLENGE EXPERIMENT
+
+========== SAVED CHALLENGE RESULTS ==========
+{
+    "author": "Tariq Hussain",
+    "training_samples": 1600,
+    "newton_iterations": 7,
+    "gd_iterations": 20000,
+    "max_diff_vs_gd": 8.881784197001252e-16,
+    "max_diff_vs_sklearn": 1.735775509437154e-09,
+    "final_gradient_norm": 1.161540838980515e-17,
+    "gradient_norm_history": [
+        0.2799685138776,
+        0.05271976788746,
+        0.008166296871302,
+        0.0003064320483939,
+        4.763972745162e-07,
+        1.156159292491e-12,
+        3.16173853028e-17
+    ],
+    "quadratic_ratios": [
+        0.6725972781835493,
+        2.938178556901983,
+        4.5949824452504835,
+        5.073420969418974,
+        5.094236904548933
+    ],
+    "quadratic_convergence_observed": true,
+    "newton_coefficients": [
+        -0.09201731603281607,
+        -1.162093898639588,
+        0.8562393232194406,
+        0.6642824045956821
+    ],
+    "gd_coefficients": [
+        -0.09201731603281606,
+        -1.162093898639587,
+        0.8562393232194401,
+        0.6642824045956816
+    ]
+}

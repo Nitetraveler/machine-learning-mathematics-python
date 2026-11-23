@@ -284,3 +284,30 @@ def test_pca_reconstruction_identity():
     )
 
     assert rec == pytest.approx(expected, rel=1e-8)
+
+
+def test_newton_matches_sklearn(clf_data):
+    from mlmath.newton import fit_newton
+
+    X, y = clf_data
+    Xb = add_bias(X)
+
+    w, n_iter = fit_newton(Xb, y)
+
+    sk = LogisticRegression(
+        penalty=None,
+        max_iter=10000,
+        tol=1e-12
+    ).fit(X, y)
+
+    np.testing.assert_allclose(
+        w,
+        np.r_[sk.intercept_, sk.coef_.ravel()],
+        atol=1e-6,
+        rtol=0
+    )
+
+    _, grad = loss_and_grad(Xb, y, w)
+
+    assert n_iter < 10
+    assert np.linalg.norm(grad) < 1e-12

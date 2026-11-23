@@ -1,0 +1,13 @@
+PASS: Previous implementations preserved
+========== VERIFY NEWTON IMPLEMENTATION ==========
+Iteration  1: ||grad||=3.415934544220e-01 ||step||=1.366034517336e+00
+Iteration  2: ||grad||=8.788564949306e-02 ||step||=8.315506563655e-01
+Iteration  3: ||grad||=2.590632236007e-02 ||step||=5.081520541485e-01
+Iteration  4: ||grad||=4.703638798128e-03 ||step||=1.382552563491e-01
+Iteration  5: ||grad||=2.392843877228e-04 ||step||=7.790769316447e-03
+Iteration  6: ||grad||=6.966660429691e-07 ||step||=2.277098895978e-05
+Iteration  7: ||grad||=5.936221767617e-12 ||step||=1.937247279610e-10
+Iteration  8: ||grad||=7.494416598652e-18 ||step||=2.107836428244e-16
+Final gradient norm: 2.206482723733923e-17
+PASS: Newton quick check
+PASS: CHALLENGE IMPLEMENTATION
