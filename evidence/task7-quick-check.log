@@ -1,0 +1,5 @@
+Component shape: (2, 3)
+Variance ratios: [0.87 0.12]
+PASS: SVD and covariance eigenvalues agree
+PASS: Full reconstruction
+PASS: Official PCA quick check

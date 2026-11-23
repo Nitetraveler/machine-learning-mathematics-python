@@ -1,0 +1,57 @@
+--- exercises/task7_pca_attempt.py	2026-11-23 18:43:51.348087764 +0000
++++ mlmath/pca.py	2026-11-23 18:43:51.570088287 +0000
+@@ -1,5 +1 @@
+-"""Task 7 guided PCA implementation exercise.
+-
+-Author: Tariq Hussain
+-Implementation completed with AI assistance.
+-"""
++"""PCA via SVD and via covariance eigendecomposition."""
+@@ -14,0 +11 @@
++        n = X.shape[0]
+@@ -16,4 +13,2 @@
+-        centered = X - self.mean_
+-
+-        _, singular_values, directions = np.linalg.svd(
+-            centered, full_matrices=False
++        _, S, Vt = np.linalg.svd(
++            X - self.mean_, full_matrices=False
+@@ -20,0 +16,8 @@
++        ev = S ** 2 / (n - 1)
++        k = self.n_components or len(S)
++        self.explained_variance_all_ = ev
++        self.explained_variance_ = ev[:k]
++        self.explained_variance_ratio_ = ev[:k] / ev.sum()
++        self.components_ = Vt[:k]
++        self.n_components_ = k
++        return self
+@@ -22 +25,2 @@
+-        variance = singular_values**2 / (len(X) - 1)
++    def transform(self, X):
++        return (np.asarray(X, float) - self.mean_) @ self.components_.T
+@@ -24,5 +28,2 @@
+-        k = (
+-            len(singular_values)
+-            if self.n_components is None
+-            else self.n_components
+-        )
++    def inverse_transform(self, Z):
++        return Z @ self.components_ + self.mean_
+@@ -30,5 +30,0 @@
+-        self.explained_variance_all_ = variance
+-        self.explained_variance_ = variance[:k]
+-        self.explained_variance_ratio_ = variance[:k] / variance.sum()
+-        self.components_ = directions[:k]
+-        self.n_components_ = k
+@@ -36 +32,6 @@
+-        return self
++def pca_eig(X):
++    """Eigenvalues/eigenvectors of the sample covariance, sorted descending."""
++    C = np.cov(np.asarray(X, float), rowvar=False)
++    vals, vecs = np.linalg.eigh(C)
++    order = np.argsort(vals)[::-1]
++    return vals[order], vecs[:, order]
+@@ -40,2 +41 @@
+-    cumulative = np.cumsum(ratio)
+-    return int(np.searchsorted(cumulative, target) + 1)
++    return int(np.searchsorted(np.cumsum(ratio), target) + 1)

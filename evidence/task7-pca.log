@@ -1,0 +1,17 @@
+digits: n=1797, p=64
+SVD vs covariance-eigh eigenvalues, max relative diff: 2.38e-15
+explained-variance ratio vs sklearn, max diff: 2.50e-16
+|cos| between our and sklearn top-10 components: min = 1.00000000
+orthonormality error max|V V^T - I|: 2.22e-15
+components for 90% variance: ours = 21, sklearn = 21
+first 5 ratios: [0.1489 0.1362 0.1179 0.0841 0.0578]
+
+  k  recon_mse  predicted
+  2    13.4210    13.4210
+  5     8.5424     8.5424
+ 10     4.9143     4.9143
+ 21     1.8173     1.8173
+ 40     0.2215     0.2215
+ 64     0.0000     0.0000
+max relative mismatch (theory vs measurement): 6.27e-16
+saved outputs/pca_digits.png

@@ -1,0 +1,5 @@
+PASS: Component dimensions
+PASS: Orthonormal components
+PASS: Descending explained variance
+PASS: Variance target selection
+PASS: Guided PCA exercise quick check
