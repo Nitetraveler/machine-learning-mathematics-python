@@ -1,0 +1,12 @@
+PASS  Setup: pinned numpy 1.26.4 / scikit-learn 1.5.1
+PASS  Task 1: data cleaned, rank and conditioning diagnosed
+PASS  Task 2: OLS normal equation, orthogonality, collinearity
+PASS  Task 3: gradient check, divergence, learning-rate bound
+PASS  Task 4: logistic regression matches sklearn (with and without L2)
+PASS  Task 5: metrics/AUC match sklearn, threshold policy, paradox
+FAIL  Task 6: ridge matches sklearn, CV selects sensible model
+PASS  Task 7: PCA matches sklearn and reconstruction theory
+PASS  Task 8: tuned pipeline persisted and CLI scoring correct
+PASS  Task 8: pytest suite passes
+
+9/10 checks passed
